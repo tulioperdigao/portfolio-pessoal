@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+:root {
+  /* Cores principais do tema escuro */
+  --dk-primary-color: #F2F2F2;         /* Cor principal (textos em destaque, botões) */
+  --dk-primary-bg-color: #101726;      /* Fundo principal */
+  --dk-secondary-bg-color: #1E2940;    /* Fundo secundário (cards, menus, etc.) */
+  --dk-border-color: #737373;          /* Cor de bordas e divisórias */
+  --dk-title-color: #0D0D0D;           /* Títulos */
+  --dk-text-color: #737373;            /* Texto padrão */
+  --dk-link-color: #1E2940;            /* Links */
+  --dk-icon-color: #737373;            /* Ícones */
+
+  /* Cores principais do tema claro */
+  --lgh-primary-color: #1E2940;         /* Cor principal (textos em destaque, botões) */
+  --lgh-primary-bg-color: #FAFAFA;      /* Fundo principal */
+  --lgh-secondary-bg-color: #E4E6EB;    /* Fundo secundário (cards, menus, etc.) */
+  --lgh-border-color: #4A4A4A;          /* Cor de bordas e divisórias */
+  --lgh-title-color: #101726;           /* Títulos */
+  --lgh-text-color: #4A4A4A;            /* Texto padrão */
+  --lgh-link-color: #1E2940;            /* Links */
+  --lgh-icon-color: #1E2940;            /* Ícones */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--dk-primary-bg-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    color: var(--dk-icon-color);
+}
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.header__brand .brand__logo {
+    width: 3.25rem;
+}
+
+#toggleTheme {
+    font-size: 1.5rem;
+    color: var(--dk-primary-color);
+}
+
+.menu  {
+    display: flex;
+    align-items: center;
+    background-color: var(--dk-primary-bg-color);
+}
+
+.menu__item {
+    width: 100%;
+}
+
+.menu--mobile {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    border: 1px solid var(--dk-border-color);
+}
+
+.menu--mobile .menu__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+    padding: 0.5rem 1rem;
+}
+
+.menu__link.active .menu__icon, 
+.menu__link.active .menu__text {
+    color: var(--dk-primary-color);
+    font-weight: 600;
+}
+
+.menu__icon, .menu__text {
+    color: var(--dk-text-color);
+}
+
+.menu__icon {
+    font-size: 1.5rem;
+}
+
+.menu__text {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+@media(min-width: 768px) {
+    .menu--mobile {
+        display: none;
+    }
+}
